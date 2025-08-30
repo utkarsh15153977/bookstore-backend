@@ -30,6 +30,7 @@ public class AuthController {
 
     @PostMapping("/register")
     public String register(@RequestBody RegisterRequest request) throws Exception {
+
         if(userRepository.existsByEmail(request.getEmail())) {
             return "Email is already in use";
         }
